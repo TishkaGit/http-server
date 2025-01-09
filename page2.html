@@ -14,6 +14,9 @@
             font-weight: bold;
             color: #333;
         }
+        .highlight {
+            background-color: yellow; /* Подсветка найденного текста */
+        }
     </style>
 </head>
 <body>
@@ -153,15 +156,32 @@
     // Функция для поиска по контенту
     function searchContent() {
         const input = document.getElementById('searchInput').value.toLowerCase();
-        const content = document.querySelectorAll('.uk-width-3-4@s p, .uk-width-3-4@s h2, .uk-width-3-4@s table');
-        
-        content.forEach(element => {
-            if (element.innerText.toLowerCase().includes(input)) {
+        const elements = document.querySelectorAll('.uk-width-3-4@s p, .uk-width-3-4@s h1, .uk-width-3-4@s h2, .uk-width-3-4@s ul, .uk-width-3-4@s table');
+
+        elements.forEach(element => {
+            const text = element.textContent.toLowerCase();
+            if (input === '') {
+                // Если поиск пустой, показываем все элементы
                 element.style.display = '';
+                // Убираем подсветку
+                if (element.innerHTML.includes('<span class="highlight">')) {
+                    element.innerHTML = element.innerHTML.replace(/<span class="highlight">/g, '').replace(/<\/span>/g, '');
+                }
+            } else if (text.includes(input)) {
+                // Если текст найден, показываем элемент и подсвечиваем совпадения
+                element.style.display = '';
+                highlightText(element, input);
             } else {
+                // Если текст не найден, скрываем элемент
                 element.style.display = 'none';
             }
         });
+    }
+
+    // Функция для подсветки найденного текста
+    function highlightText(element, searchText) {
+        const regex = new RegExp(`(${searchText})`, 'gi');
+        element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
     }
 
     // Обработчик для комбинации клавиш Ctrl + F
