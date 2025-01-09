@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Языки программирования для создания HTTP-серверов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
+    <style>
+        .custom-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .highlight {
+            background-color: yellow; /* Подсветка найденного текста */
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Горизонтальное меню -->
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <div class="uk-navbar-item custom-title">HTTP сервера и использование языков программирования</div>
+    </div>
+    <div class="uk-navbar-right">
+        <form class="uk-search uk-search-navbar" onsubmit="return false;">
+            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск..." aria-label="Search" oninput="searchContent()">
+        </form>
+    </div>
+</nav>
+
+<div class="uk-container uk-margin-top">
+    <div class="uk-grid" uk-grid>
+        <div class="uk-width-1-4@s">
+            <!-- Левый сайдбар -->
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">Навигация по подтемам</h3>
+                <ul class="uk-list uk-list-divider">
+                    <li><a href="#programming-languages">Обзор языков программирования</a></li>
+                    <li><a href="#framework-comparison">Сравнение фреймворков</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="uk-width-3-4@s">
+            <h1>Языки программирования для создания HTTP-серверов</h1>
+            <p>Для создания HTTP-серверов используются различные языки программирования и фреймворки. Каждый из них имеет свои преимущества и недостатки, которые делают их подходящими для разных задач.</p>
+            
+            <h2 id="programming-languages">Обзор языков программирования (Python, JavaScript, PHP, Java, Ruby)</h2>
+            <p>Рассмотрим популярные языки программирования, которые используются для создания HTTP-серверов:</p>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Язык</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Python</td>
+                        <td>Универсальный язык с простым синтаксисом. Широко используется для создания веб-серверов благодаря фреймворкам, таким как Flask и Django.</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Язык для веб-разработки, который может использоваться как на клиенте, так и на сервере. Node.js позволяет создавать высокопроизводительные серверы.</td>
+                    </tr>
+                    <tr>
+                        <td>PHP</td>
+                        <td>Язык, специально разработанный для веб-разработки. Широко используется для создания динамических веб-сайтов.</td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td>Мощный язык для создания корпоративных приложений. Spring — популярный фреймворк для создания серверов на Java.</td>
+                    </tr>
+                    <tr>
+                        <td>Ruby</td>
+                        <td>Язык с удобным синтаксисом, часто используемый с фреймворком Ruby on Rails для создания веб-приложений.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="framework-comparison">Сравнение фреймворков для создания серверов (Flask, Express, Spring, Django)</h2>
+            <p>Фреймворки упрощают создание HTTP-серверов, предоставляя готовые решения для маршрутизации, обработки запросов и других задач. Рассмотрим популярные фреймворки:</p>
+            <div class="image-container">
+                <img src="https://img.freepik.com/premium-vector/beautiful-golden-scales-weighing-decisions-judgments-symbol-justice-balance_200075-3926.jpg?w=826" alt="Весы для сравнения">
+            </div>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Фреймворк</th>
+                        <th>Язык</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Flask</td>
+                        <td>Python</td>
+                        <td>Микрофреймворк для создания простых и легковесных веб-приложений. Подходит для небольших проектов.</td>
+                    </tr>
+                    <tr>
+                        <td>Express</td>
+                        <td>JavaScript</td>
+                        <td>Минималистичный фреймворк для Node.js, который позволяет быстро создавать серверы и API.</td>
+                    </tr>
+                    <tr>
+                        <td>Spring</td>
+                        <td>Java</td>
+                        <td>Мощный фреймворк для создания корпоративных приложений. Поддерживает множество встроенных функций.</td>
+                    </tr>
+                    <tr>
+                        <td>Django</td>
+                        <td>Python</td>
+                        <td>Фреймворк с батарейками включен, который подходит для создания сложных веб-приложений.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="uk-margin-top">
+        <ul class="uk-pagination uk-flex-center" uk-margin>
+            <li><a href="page3.html">«</a></li>
+            <li><a href="page1.html">1</a></li>
+            <li><a href="page2.html">2</a></li>
+            <li><a href="page3.html">3</a></li>
+            <li class="uk-active"><span>4</span></li>
+            <li><a href="page5.html">5</a></li>
+            <li><a href="page6.html">6</a></li>
+            <li><a href="page7.html">7</a></li>
+            <li><a href="page8.html">8</a></li>
+            <li><a href="page9.html">9</a></li>
+            <li><a href="page10.html">10</a></li>
+            <li><a href="page5.html">»</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer class="uk-section uk-section-secondary uk-padding-small">
+    <div class="uk-container">
+        <p class="uk-text-center">© 2025 HTTP Серверы и Языки Программирования. Все права защищены.</p>
+        <p class="uk-text-center">
+            <a href="https://edu.kirpichev.info/user/profile.php?id=629" target="_blank" uk-icon="icon: user; ratio: 1.5" title="Профиль"></a>
+            <a href="https://github.com/TishkaGit" target="_blank" uk-icon="icon: github; ratio: 1.5" title="GitHub"></a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Функция для поиска по таблицам
+    function searchContent() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const tables = document.querySelectorAll('.uk-width-3-4@s table');
+
+        tables.forEach(table => {
+            const rows = table.querySelectorAll('tbody tr');
+            let hasMatch = false;
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                let rowHasMatch = false;
+
+                cells.forEach(cell => {
+                    const text = cell.textContent.toLowerCase();
+                    if (input === '') {
+                        // Если поиск пустой, убираем подсветку
+                        if (cell.innerHTML.includes('<span class="highlight">')) {
+                            cell.innerHTML = cell.innerHTML.replace(/<span class="highlight">/g, '').replace(/<\/span>/g, '');
+                        }
+                    } else if (text.includes(input)) {
+                        // Если текст найден, подсвечиваем совпадения
+                        highlightText(cell, input);
+                        rowHasMatch = true;
+                        hasMatch = true;
+                    } else {
+                        // Если текст не найден, убираем подсветку
+                        if (cell.innerHTML.includes('<span class="highlight">')) {
+                            cell.innerHTML = cell.innerHTML.replace(/<span class="highlight">/g, '').replace(/<\/span>/g, '');
+                        }
+                    }
+                });
+
+                // Показываем или скрываем строку в зависимости от наличия совпадений
+                row.style.display = rowHasMatch ? '' : 'none';
+            });
+
+            // Показываем или скрываем таблицу в зависимости от наличия совпадений
+            table.style.display = hasMatch ? '' : 'none';
+        });
+    }
+
+    // Функция для подсветки найденного текста
+    function highlightText(element, searchText) {
+        const regex = new RegExp(`(${searchText})`, 'gi');
+        element.innerHTML = element.innerHTML.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    // Обработчик для комбинации клавиш Ctrl + F
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'f') {
+            event.preventDefault(); // Предотвращаем стандартное поведение браузера
+            document.getElementById('searchInput').focus(); // Фокусируемся на поле поиска
+        }
+    });
+</script>
+
+</body>
+</html>
