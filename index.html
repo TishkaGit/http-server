@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
+    <style>
+        .custom-title {
+            font-family: 'Arial', sans-serif; /* Замените на любой другой шрифт по вашему выбору */
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
 
 <!-- Горизонтальное меню -->
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="page1.html">Страница 1</a></li>
-            <li><a href="page2.html">Страница 2</a></li>
-            <li><a href="page3.html">Страница 3</a></li>
-            <li><a href="page4.html">Страница 4</a></li>
-            <li><a href="page5.html">Страница 5</a></li>
-            <li><a href="page6.html">Страница 6</a></li>
-            <li><a href="page7.html">Страница 7</a></li>
-            <li><a href="page8.html">Страница 8</a></li>
-            <li><a href="page9.html">Страница 9</a></li>
-            <li><a href="page10.html">Страница 10</a></li>
-        </ul>
+        <div class="uk-navbar-item custom-title">HTTP сервера и использование языков программирования</div>
+    </div>
+    <div class="uk-navbar-right">
+        <form class="uk-search uk-search-navbar">
+            <input class="uk-search-input" type="search" placeholder="Поиск..." aria-label="Search">
+        </form>
     </div>
 </nav>
 
@@ -77,6 +78,17 @@
             <h2>Изображения</h2>
             <img src="https://via.placeholder.com/300" alt="Пример изображения" class="uk-margin-small-top" />
         </div>
+    </div>
+
+    <!-- Постраничная навигация -->
+    <div class="uk-margin-top">
+        <ul class="uk-pagination uk-flex-center" uk-margin>
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li class="uk-active"><span>2</span></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
     </div>
 </div>
 
