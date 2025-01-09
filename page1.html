@@ -90,9 +90,9 @@
     <!-- Пагинация -->
     <div class="uk-margin-top">
         <ul class="uk-pagination uk-flex-center" uk-margin>
-            <li><a href="page1.html">«</a></li>
-            <li><a href="page1.html">1</a></li>
-            <li class="uk-active"><span>2</span></li>
+            <li class="uk-disabled"><span>«</span></li>
+            <li class="uk-active"><span>1</span></li>
+            <li><a href="page2.html">2</a></li>
             <li><a href="page3.html">3</a></li>
             <li><a href="page4.html">4</a></li>
             <li><a href="page5.html">5</a></li>
@@ -101,7 +101,7 @@
             <li><a href="page8.html">8</a></li>
             <li><a href="page9.html">9</a></li>
             <li><a href="page10.html">10</a></li>
-            <li><a href="page10.html">»</a></li>
+            <li><a href="page2.html">»</a></li>
         </ul>
     </div>
 </div>
@@ -131,6 +131,14 @@
             }
         });
     }
+
+    // Обработчик для комбинации клавиш Ctrl + F
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'f') {
+            event.preventDefault(); // Предотвращаем стандартное поведение браузера
+            document.getElementById('searchInput').focus(); // Фокусируемся на поле поиска
+        }
+    });
 </script>
 
 </body>
