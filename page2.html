@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архитектура клиент-сервер</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
+    <style>
+        .custom-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Горизонтальное меню -->
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <div class="uk-navbar-item custom-title">HTTP сервера и использование языков программирования</div>
+    </div>
+    <div class="uk-navbar-right">
+        <form class="uk-search uk-search-navbar" onsubmit="return false;">
+            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск..." aria-label="Search" oninput="searchContent()">
+        </form>
+    </div>
+</nav>
+
+<div class="uk-container uk-margin-top">
+    <div class="uk-grid" uk-grid>
+        <div class="uk-width-1-4@s">
+            <!-- Левый сайдбар -->
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">Навигация по подтемам</h3>
+                <ul class="uk-list uk-list-divider">
+                    <li><a href="#client-server-model">Принципы работы клиент-серверной модели</a></li>
+                    <li><a href="#http-server-role">Роль HTTP-сервера в архитектуре веб-приложений</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="uk-width-3-4@s">
+            <h1>Архитектура клиент-сервер</h1>
+            <p>Клиент-серверная архитектура — это модель взаимодействия между клиентом и сервером, где клиент запрашивает ресурсы или услуги, а сервер предоставляет их. Эта модель широко используется в веб-приложениях, базах данных и других сетевых системах.</p>
+            
+            <h2 id="client-server-model">Принципы работы клиент-серверной модели</h2>
+            <p>Клиент-серверная модель основана на разделении обязанностей между клиентом и сервером:</p>
+            <ul>
+                <li><strong>Клиент:</strong> Это устройство или программа, которая отправляет запросы серверу. Например, веб-браузер, который запрашивает HTML-страницы.</li>
+                <li><strong>Сервер:</strong> Это устройство или программа, которая обрабатывает запросы клиента и возвращает результаты. Например, веб-сервер, который обрабатывает HTTP-запросы и отправляет HTML-страницы.</li>
+            </ul>
+            <p>Основные принципы работы клиент-серверной модели:</p>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Принцип</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Разделение обязанностей</td>
+                        <td>Клиент и сервер выполняют разные задачи: клиент запрашивает данные, а сервер их предоставляет.</td>
+                    </tr>
+                    <tr>
+                        <td>Централизация данных</td>
+                        <td>Данные хранятся на сервере, что обеспечивает их безопасность и согласованность.</td>
+                    </tr>
+                    <tr>
+                        <td>Масштабируемость</td>
+                        <td>Сервер может обслуживать множество клиентов одновременно, что позволяет масштабировать систему.</td>
+                    </tr>
+                    <tr>
+                        <td>Независимость</td>
+                        <td>Клиент и сервер могут быть разработаны на разных технологиях, что обеспечивает гибкость.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="http-server-role">Роль HTTP-сервера в архитектуре веб-приложений</h2>
+            <p>HTTP-сервер играет ключевую роль в архитектуре веб-приложений. Он отвечает за обработку HTTP-запросов от клиентов и отправку соответствующих ответов. Основные функции HTTP-сервера:</p>
+            <ul>
+                <li><strong>Обработка запросов:</strong> HTTP-сервер принимает запросы от клиентов (например, GET, POST) и обрабатывает их.</li>
+                <li><strong>Хранение и предоставление данных:</strong> Сервер хранит статические файлы (HTML, CSS, JavaScript) и динамически генерирует контент на основе запросов.</li>
+                <li><strong>Управление соединениями:</strong> Сервер поддерживает соединения с клиентами и управляет их жизненным циклом.</li>
+                <li><strong>Безопасность:</strong> Сервер обеспечивает безопасность данных, используя протоколы шифрования (например, HTTPS).</li>
+            </ul>
+            <p>Примеры популярных HTTP-серверов:</p>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Сервер</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apache HTTP Server</td>
+                        <td>Один из самых популярных веб-серверов с открытым исходным кодом.</td>
+                    </tr>
+                    <tr>
+                        <td>Nginx</td>
+                        <td>Высокопроизводительный сервер, часто используемый для обработки статических файлов и балансировки нагрузки.</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft IIS</td>
+                        <td>Веб-сервер от Microsoft, используемый в Windows-средах.</td>
+                    </tr>
+                    <tr>
+                        <td>Node.js</td>
+                        <td>Серверная платформа на JavaScript, которая может использоваться как HTTP-сервер.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Пагинация -->
+    <div class="uk-margin-top">
+        <ul class="uk-pagination uk-flex-center" uk-margin>
+            <li><a href="page1.html">«</a></li>
+            <li><a href="page1.html">1</a></li>
+            <li class="uk-active"><span>2</span></li>
+            <li><a href="page3.html">3</a></li>
+            <li><a href="page4.html">4</a></li>
+            <li><a href="page5.html">5</a></li>
+            <li><a href="page6.html">6</a></li>
+            <li><a href="page7.html">7</a></li>
+            <li><a href="page8.html">8</a></li>
+            <li><a href="page9.html">9</a></li>
+            <li><a href="page10.html">10</a></li>
+            <li><a href="page3.html">»</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer class="uk-section uk-section-secondary uk-padding-small">
+    <div class="uk-container">
+        <p class="uk-text-center">© 2025 HTTP Серверы и Языки Программирования. Все права защищены.</p>
+        <p class="uk-text-center">
+            <a href="https://edu.kirpichev.info/user/profile.php?id=629" target="_blank" uk-icon="icon: user; ratio: 1.5" title="Профиль"></a>
+            <a href="https://github.com/TishkaGit" target="_blank" uk-icon="icon: github; ratio: 1.5" title="GitHub"></a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    // Функция для поиска по контенту
+    function searchContent() {
+        const input = document.getElementById('searchInput').value.toLowerCase();
+        const content = document.querySelectorAll('.uk-width-3-4@s p, .uk-width-3-4@s h2, .uk-width-3-4@s table');
+        
+        content.forEach(element => {
+            if (element.innerText.toLowerCase().includes(input)) {
+                element.style.display = '';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    }
+
+    // Обработчик для комбинации клавиш Ctrl + F
+    document.addEventListener('keydown', function(event) {
+        if (event.ctrlKey && event.key === 'f') {
+            event.preventDefault(); // Предотвращаем стандартное поведение браузера
+            document.getElementById('searchInput').focus(); // Фокусируемся на поле поиска
+        }
+    });
+</script>
+
+</body>
+</html>
