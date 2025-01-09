@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основы HTTP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
+    <style>
+        .custom-title {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Горизонтальное меню -->
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <div class="uk-navbar-item custom-title">HTTP сервера и использование языков программирования</div>
+    </div>
+</nav>
+
+<div class="uk-container uk-margin-top">
+    <div class="uk-grid" uk-grid>
+        <div class="uk-width-1-4@s">
+            <!-- Левый сайдбар -->
+            <div class="uk-card uk-card-default uk-card-body">
+                <h3 class="uk-card-title">Навигация</h3>
+                <ul class="uk-list uk-list-divider">
+                    <li><a href="page1.html">Основы HTTP</a></li>
+                    <li><a href="page2.html">Архитектура клиент-сервер</a></li>
+                    <li><a href="page3.html">Типы HTTP-серверов</a></li>
+                    <li><a href="page4.html">Языки программирования</a></li>
+                    <li><a href="page5.html">RESTful API</a></li>
+                    <li><a href="page6.html">Обработка запросов</a></li>
+                    <li><a href="page7.html">Безопасность серверов</a></li>
+                    <li><a href="page8.html">Кэширование</a></li>
+                    <li><a href="page9.html">Серверные технологии</a></li>
+                    <li><a href="page10.html">Мониторинг серверов</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="uk-width-3-4@s">
+            <h1>Основы HTTP</h1>
+            <p>HTTP (Hypertext Transfer Protocol) — это протокол, который используется для передачи данных в интернете. Он был разработан в начале 1990-х годов и с тех пор претерпел множество изменений.</p>
+            <h2>Версии HTTP</h2>
+            <ul>
+                <li><strong>HTTP/1.1:</strong> Основная версия, которая поддерживает постоянные соединения и кэширование.</li>
+                <li><strong>HTTP/2:</strong> Улучшенная версия, которая использует бинарный формат и мультиплексирование.</li>
+                <li><strong>HTTP/3:</strong> Новая версия, основанная на QUIC, которая обеспечивает более быструю передачу данных.</li>
+            </ul>
+            <h2>Структура HTTP-запросов и ответов</h2>
+            <table class="uk-table uk-table-striped">
+                <thead>
+                    <tr>
+                        <th>Компонент</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Метод</td>
+                        <td>Тип запроса (GET, POST, PUT, DELETE и т.д.)</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td>Адрес ресурса</td>
+                    </tr>
+                    <tr>
+                        <td>Заголовки</td>
+                        <td>Дополнительная информация о запросе или ответе</td>
+                    </tr>
+                    <tr>
+                        <td>Тело</td>
+                        <td>Данные, отправляемые с запросом (например, в POST-запросах)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Подвал -->
+<footer class="uk-section uk-section-secondary uk-padding-small">
+    <div class="uk-container">
+        <p class="uk-text-center">© 2025 HTTP Серверы и Языки Программирования. Все права защищены.</p>
+        <p class="uk-text-center">
+            <a href="https://edu.kirpichev.info/user/profile.php?id=629" target="_blank" uk-icon="icon: user"></a>
+            <a href="https://github.com/TishkaGit" target="_blank" uk-icon="icon: github"></a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
