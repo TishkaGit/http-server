@@ -122,12 +122,26 @@
     function searchContent() {
         const input = document.getElementById('searchInput').value.toLowerCase();
         const content = document.querySelectorAll('.uk-width-3-4@s p, .uk-width-3-4@s h2, .uk-width-3-4@s table');
-        
+
         content.forEach(element => {
-            if (element.innerText.toLowerCase().includes(input)) {
-                element.style.display = '';
+            if (element.tagName === 'TABLE') {
+                // Обрабатываем таблицы
+                const rows = element.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const rowText = row.innerText.toLowerCase();
+                    if (rowText.includes(input)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
             } else {
-                element.style.display = 'none';
+                // Обрабатываем остальные элементы (p, h2)
+                if (element.innerText.toLowerCase().includes(input)) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
             }
         });
     }
