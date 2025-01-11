@@ -173,6 +173,7 @@
                         if (cell.innerHTML.includes('<span class="highlight">')) {
                             cell.innerHTML = cell.innerHTML.replace(/<span class="highlight">/g, '').replace(/<\/span>/g, '');
                         }
+                        row.style.display = ''; // Показываем все строки, если поиск пустой
                     } else if (text.includes(input)) {
                         // Если текст найден, подсвечиваем совпадения
                         highlightText(cell, input);
