@@ -57,7 +57,7 @@
 
             <h2 id="http-structure">Структура HTTP-запросов и ответов</h2>
             <p>HTTP-запросы и ответы имеют четкую структуру, которая включает несколько компонентов:</p>
-            <table class="uk-table uk-table-striped">
+            <table class="uk-table uk-table-striped" id="http-table">
                 <thead>
                     <tr>
                         <th>Компонент</th>
@@ -121,27 +121,15 @@
     // Функция для поиска по контенту
     function searchContent() {
         const input = document.getElementById('searchInput').value.toLowerCase();
-        const content = document.querySelectorAll('.uk-width-3-4@s p, .uk-width-3-4@s h2, .uk-width-3-4@s table');
+        const table = document.getElementById('http-table');
+        const rows = table.querySelectorAll('tbody tr');
 
-        content.forEach(element => {
-            if (element.tagName === 'TABLE') {
-                // Обрабатываем таблицы
-                const rows = element.querySelectorAll('tr');
-                rows.forEach(row => {
-                    const rowText = row.innerText.toLowerCase();
-                    if (rowText.includes(input)) {
-                        row.style.display = '';
-                    } else {
-                        row.style.display = 'none';
-                    }
-                });
+        rows.forEach(row => {
+            const rowText = row.innerText.toLowerCase();
+            if (rowText.includes(input)) {
+                row.style.display = ''; // Показываем строку, если она содержит искомый текст
             } else {
-                // Обрабатываем остальные элементы (p, h2)
-                if (element.innerText.toLowerCase().includes(input)) {
-                    element.style.display = '';
-                } else {
-                    element.style.display = 'none';
-                }
+                row.style.display = 'none'; // Скрываем строку, если она не содержит искомый текст
             }
         });
     }
