@@ -25,7 +25,7 @@
     </div>
     <div class="uk-navbar-right">
         <form class="uk-search uk-search-navbar" onsubmit="return false;">
-            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск..." aria-label="Search" oninput="searchContent()">
+            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск по таблице..." aria-label="Search" oninput="searchContent()">
         </form>
     </div>
 </nav>
@@ -138,7 +138,9 @@
     document.addEventListener('keydown', function(event) {
         if (event.ctrlKey && event.key === 'f') {
             event.preventDefault(); // Предотвращаем стандартное поведение браузера
-            document.getElementById('searchInput').focus(); // Фокусируемся на поле поиска
+            const searchInput = document.getElementById('searchInput');
+            searchInput.focus(); // Фокусируемся на поле поиска
+            searchInput.select(); // Выделяем текст в поле поиска для удобства
         }
     });
 </script>
