@@ -32,7 +32,7 @@
     </div>
     <div class="uk-navbar-right">
         <form class="uk-search uk-search-navbar" onsubmit="return false;">
-            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск..." aria-label="Search" oninput="searchContent()">
+            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск по таблицам..." aria-label="Search" oninput="searchContent()">
         </form>
     </div>
 </nav>
@@ -188,6 +188,17 @@
         if (event.ctrlKey && event.key === 'f') {
             event.preventDefault(); // Предотвращаем стандартное поведение браузера
             document.getElementById('searchInput').focus(); // Фокусируемся на поле поиска
+        }
+    });
+
+    // Автоматически изменяем текст в поле поиска в зависимости от количества таблиц
+    document.addEventListener('DOMContentLoaded', function() {
+        const tables = document.querySelectorAll('.uk-width-3-4@s table');
+        const searchInput = document.getElementById('searchInput');
+        if (tables.length === 1) {
+            searchInput.placeholder = 'Поиск по таблице...';
+        } else {
+            searchInput.placeholder = 'Поиск по таблицам...';
         }
     });
 </script>
