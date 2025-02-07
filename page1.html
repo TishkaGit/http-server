@@ -23,11 +23,6 @@
     <div class="uk-navbar-left">
         <div class="uk-navbar-item custom-title">HTTP сервера и использование языков программирования</div>
     </div>
-    <div class="uk-navbar-right">
-        <form class="uk-search uk-search-navbar" onsubmit="return false;">
-            <input class="uk-search-input" type="search" id="searchInput" placeholder="Поиск по таблице..." aria-label="Search" oninput="searchContent()">
-        </form>
-    </div>
 </nav>
 
 <div class="uk-container uk-margin-top">
@@ -57,6 +52,16 @@
 
             <h2 id="http-structure">Структура HTTP-запросов и ответов</h2>
             <p>HTTP-запросы и ответы имеют четкую структуру, которая включает несколько компонентов:</p>
+
+            <div class="uk-margin">
+                <form class="uk-search uk-search-default" onsubmit="return false;">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input" type="search" id="searchInput" 
+                           placeholder="Поиск по таблице... (Ctrl + Shift + F)" 
+                           aria-label="Search">
+                </form>
+            </div>
+
             <table class="uk-table uk-table-striped" id="http-table">
                 <thead>
                     <tr>
@@ -118,31 +123,44 @@
 </footer>
 
 <script>
-    // Функция для поиска по контенту
+    // Функция для поиска по контенту таблицы
     function searchContent() {
         const input = document.getElementById('searchInput').value.toLowerCase();
         const table = document.getElementById('http-table');
-        const rows = table.querySelectorAll('tbody tr');
+        const rows = table.getElementsByTagName('tr');
 
-        rows.forEach(row => {
-            const rowText = row.innerText.toLowerCase();
-            if (rowText.includes(input)) {
-                row.style.display = ''; // Показываем строку, если она содержит искомый текст
-            } else {
-                row.style.display = 'none'; // Скрываем строку, если она не содержит искомый текст
+        // Начинаем с 1, чтобы пропустить заголовок таблицы
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const cells = row.getElementsByTagName('td');
+            let found = false;
+
+            // Проверяем каждую ячейку в строке
+            for (let j = 0; j < cells.length; j++) {
+                const cellText = cells[j].textContent || cells[j].innerText;
+                if (cellText.toLowerCase().indexOf(input) > -1) {
+                    found = true;
+                    break;
+                }
             }
-        });
+
+            // Показываем или скрываем строку
+            row.style.display = found ? '' : 'none';
+        }
     }
 
-    // Обработчик для комбинации клавиш Ctrl + F
+    // Обработчик для комбинации клавиш Ctrl + Shift + F
     document.addEventListener('keydown', function(event) {
-        if (event.ctrlKey && event.key === 'f') {
+        if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'f') {
             event.preventDefault(); // Предотвращаем стандартное поведение браузера
             const searchInput = document.getElementById('searchInput');
             searchInput.focus(); // Фокусируемся на поле поиска
             searchInput.select(); // Выделяем текст в поле поиска для удобства
         }
     });
+
+    // Добавляем обработчик события input для поля поиска
+    document.getElementById('searchInput').addEventListener('input', searchContent);
 </script>
 
 </body>
